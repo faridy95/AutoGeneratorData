@@ -1,0 +1,5 @@
+{
+	"NumClient" : [1, 2, 3, 4, 5, 6, 7, 8],
+	"NomClient" : ["Quentin", "Mathys", "Louane", "Gabrielle", "Baptiste", "Léane", "Valentine", "Ayoub"],
+	"PointsRapizz" : [40, 39, 13, 38, 25, 44, 46, 13]
+}

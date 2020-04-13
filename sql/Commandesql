@@ -1,0 +1,5 @@
+insert into Commande values (1, '2/3/1992  8:29:54', 'Grande', 'O', 7, 9, 33);
+insert into Commande values (2, '15/1/1919  23:53:49', 'Grande', 'N', 28, 30, 6);
+insert into Commande values (3, '4/9/2018  11:40:31', 'Petite', 'O', 13, 23, 43);
+insert into Commande values (4, '11/10/1906  7:37:49', 'Grande', 'O', 39, 3, 3);
+insert into Commande values (5, '4/12/1996  17:3:28', 'Petite', 'N', 32, 38, 34);

@@ -1,0 +1,15 @@
+#include <json/json.h>
+#include <stdio.h>
+#define ALARM1 4
+typedef struct
+{
+int signo;
+char* msg;
+int level;
+} Alarm1;
+
+Alarm1 a1;
+// Initialize a1
+JSerializer_set(s,"{dsd}","signo",a1.signo,"msg",a1.msg,"level",a1.level);
+JSerializer_commit(s); /* Commit JSON data i.e. send to peer. */
+

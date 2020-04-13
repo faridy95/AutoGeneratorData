@@ -1,0 +1,14 @@
+insert into Ingredient values (1, 'Augustin');
+insert into Ingredient values (2, 'Milan');
+insert into Ingredient values (3, 'Gabrielle');
+insert into Ingredient values (4, 'Victor');
+insert into Ingredient values (5, 'Maëlys');
+insert into Ingredient values (6, 'Eloïse');
+insert into Ingredient values (7, 'Giulia');
+insert into Ingredient values (8, 'Sarah');
+insert into Ingredient values (9, 'Aaron');
+insert into Ingredient values (10, 'Julie');
+insert into Ingredient values (11, 'Célia');
+insert into Ingredient values (12, 'Faustine');
+insert into Ingredient values (13, 'Lenny');
+insert into Ingredient values (14, 'Thaïs');

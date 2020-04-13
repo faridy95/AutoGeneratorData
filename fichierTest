@@ -1,0 +1,347 @@
+[
+	{
+		"NomRelation" : "Compose",
+		"Attributs" :
+		[
+			{
+				"name" : "NomPizzas",
+				"type" : "string",
+				"options" :
+				{
+					"taillemin" : 5,
+					"taillemax" : 30,
+					"not null": true
+				},
+				"link" :
+				{
+					"NomRelation" : "Pizza",
+					"name" : "NomPizza"
+				}
+			},
+			{
+				"name" : "NumIngre",
+				"type" : "int",
+				"options" :
+				{
+					"taillemin" : 1,
+					"taillemax" : 5,
+					"not null": true,
+					"age": true
+				},
+				"link" :
+				{
+					"NomRelation" : "Ingredient",
+					"name" : "NumIngre"
+				}
+			}
+		]
+	},
+	{
+		"NomRelation" : "Client",
+		"Attributs" : 
+		[
+			{
+				"name" : "NumClient",
+				"type" : "int",
+				"options" :
+				{
+					"taillemin" : 1,
+					"taillemax" : 54,
+					"type" : "identifiant",
+					"not null": true,
+					"serial":true
+				}
+			},
+			{
+				"name" : "NomClient",
+				"type" : "string",
+				"options" :
+			
+					{
+						"taillemin" : 5,
+						"taillemax" : 30,
+						"type" : "nom",
+						"not null" : true
+					
+					}		
+			},
+			{
+				"name" : "Adresse",
+				"type" : "string",
+				"options" :
+				{
+					"taillemin" : 4,
+					"taillemax" : 30,
+					"type": "email",
+					"not null" :false,
+					"unique" :false
+				}
+			},
+			{
+				"name" : "compte",
+				"type" : "float",
+				"options" :
+				{
+					"taillemin" : 12,
+					"taillemax" : 20,
+					"not null":  true
+				}
+			},
+			{
+				"name" : "PointsRapizz",
+				"type" : "int",
+				"options" :
+				{
+					"taillemin" : 1,
+					"taillemax" : 4,
+					"not null": true
+				}
+			}
+		]
+	},
+	{
+		"NomRelation" : "Pizza",
+		"Attributs" :
+		[
+			{
+				"name" : "NomPizza",
+				"type" : "string",
+				"options" :
+				{
+					"taillemin" : 5,
+					"taillemax" : 30,
+					"type" : "identifiant",
+					"not null": true,
+					"serial" : true
+				}
+			},
+			{
+				"name" : "Prix",
+				"type" : "int",
+				"options" :
+				{
+					"taillemin" : 3,
+					"taillemax" : 5,
+					"not null": true
+				}
+			}
+		]
+	},
+	{
+		"NomRelation" : "Ingredient",
+		"Attributs" :
+		[
+			{
+				"name" : "NumIngre",
+				"type" : "int",
+				"options" :
+				{
+					"taillemin" : 1,
+					"taillemax" : 5,
+					"not null": true,
+					"serial" : true
+				}
+			},
+			{
+				"name" : "NomIngre",
+				"type" : "string",
+				"options" :
+				{
+					"taillemin" : 5,
+					"taillemax" : 30,
+					"type" : "nom",
+					"not null": true
+				}
+			}
+		]
+	},
+	{
+		"NomRelation" : "Vehicule",
+		"Attributs" :
+		[
+			{
+				"name" : "NumImmat",
+				"type" : "int",
+				"options" :
+				{
+					"taillemin" : 1,
+					"taillemax" : 5,
+					"not null": true,
+					"serial" : true
+				}
+			},
+			
+			{
+				"name" : "Marque",
+				"type" : "string",
+				"options" :
+				{
+					"taillemin" : 5,
+					"taillemax" : 30,
+					"not null": true,
+					"choix" : ["Toyota","BMW","Mercedes","Corolla","RAV4"]
+				}
+			},
+			{
+				"name" : "Type",
+				"type" : "string",
+				"options" :
+				{
+					"taillemin" : 5,
+					"taillemax" : 30,
+					"not null": true,
+					"choix" : ["Mahindra","Yamaha","Peugeot","Tout_terrain"]
+				}
+			}
+		]
+	},
+	{
+		"NomRelation" : "Livreur",
+		"Attributs" :
+		[
+			{
+				"name" : "CodeLivreur",
+				"type" : "int",
+				"options" :
+				{
+					"taillemin" : 1,
+					"taillemax" : 52,
+					"not null": true,
+					"serial" : true
+				}
+			},
+			{
+				"name" : "NomLivreur",
+				"type" : "string",
+				"options" :
+				{
+					"taillemin" : 5,
+					"taillemax" : 30,
+					"type" : "nom",
+					"not null": true
+				}
+			},
+			{
+				"name" : "Telelivreur",
+				"type" : "string",
+				"options" :
+				{
+					"taillemin" : 5,
+					"taillemax" : 30,
+					"type" : "telephone",
+					"not null": true
+				}
+			}
+		]
+	},
+	{
+		"NomRelation" : "Commande",
+		"Attributs" :
+		[
+			{
+				"name" : "NumCommande",
+				"type" : "int",
+				"options" :
+				{
+					"taillemin" : 1,
+					"taillemax" : 5,
+					"not null": true,
+					"serial" : true
+				}
+			},
+			{
+				"name" : "DateCom",
+				"type" : "string",
+				"options" :
+				{
+					"taillemin" : 8,
+					"taillemax" : 12,
+					"type" : "date",
+					"not null" : true
+				}
+			},
+			{
+				"name" : "Taille",
+				"type" : "string",
+				"options" :
+				{
+					"taillemin" : 3,
+					"taillemax" : 5,
+					"not null": true,
+					"choix" : ["Petite", "Moyenne", "Grande"]
+				}
+			},
+			{
+				"name" : "Retard",
+				"type" : "string",
+				"options" :
+				{
+					"taillemin" : 0,
+					"taillemax" : 1,
+					"not null": true,
+					"choix" : ["O", "N"]
+				}
+			},
+			{
+				"name" : "NumClients",
+				"type" : "int",
+				"options" :
+				{
+					"taillemin" : 1,
+					"taillemax" : 5,
+					"not null": true
+				},
+				"link" :
+				{
+					"NomRelation" : "Client",
+					"name" : "NumClient"
+				}
+			},
+			{
+				"name" : "NomPizzass",
+				"type" : "string",
+				"options" :
+				{
+					"taillemin" : 5,
+					"taillemax" : 30,
+					"not null": true
+				},
+				"link" :
+				{
+					"NomRelation" : "Pizza",
+					"name" : "NomPizza"
+				}
+			},
+			{
+				"name" : "CodeLivreurs",
+				"type" : "int",
+				"options" :
+				{
+					"taillemin" : 1,
+					"taillemax" : 5,
+					"not null": true
+				},
+				"link" :
+				{
+					"NomRelation" : "Livreur",
+					"name" : "CodeLivreur"
+				}
+			},
+			{
+				"name" : "NumImmats",
+				"type" : "int",
+				"options" :
+				{
+					"taillemin" : 1,
+					"taillemax" : 5,
+					"not null": true
+				},
+				"link" :
+				{
+					"NomRelation" : "Vehicule",
+					"name" : "NumImmat"
+				}
+			}
+		]
+	}
+]

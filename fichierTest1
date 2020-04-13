@@ -1,0 +1,445 @@
+[
+	{
+		"NomRelation" : "PassageCode",
+		"Attributs" : 
+		[
+			{
+				"name" : "PassageCodeIDs",
+				"type" : "int",
+				"options" :
+				{
+						"taillemin" : 1,
+						"taillemax" : 20,
+						"type" : "int",
+						"not null" : true
+				},
+				"link" :
+				{
+					"NomRelation" : "ExamenCode",
+					"name" : "PassageCodeID"
+				}
+			},
+			{
+				"name" : "ClientIDs",
+				"type" : "int",
+				"options" :
+				{
+					"taillemin" : 1,
+					"taillemax" : 11,
+					"not null" : true
+				},
+				"link" :
+				{
+					"NomRelation" : "Client",
+					"name" : "ClientID"
+				}
+			},
+			{
+				"name" : "NombreFautes",
+				"type" : "int",
+				"options" :
+				{
+					"taillemin" : 1,
+					"taillemax" : 50,
+					"not null" : true,
+					"serial" : true
+				}
+			}
+		]
+	},
+	{
+		"NomRelation" : "Question",
+		"Attributs" : 
+		[
+			{
+				"name" : "QuestionID",
+				"type" : "int",
+				"options" :
+				{
+						"taillemin" : 4,
+						"taillemax" : 49,
+						"type" : "identifiant",
+						"not null" : false,
+						"serial" : true
+				}
+			},
+			{
+				"name" : "Intitule",
+				"type" : "string",
+				"options" :
+				{
+					"taillemin" : 4,
+					"taillemax" : 9,
+					"type" : "nom",
+					"not null" : true
+				}
+			},
+			{
+				"name" : "Reponse",
+				"type" : "string",
+				"options" :
+				{
+					"taillemin" : 4,
+					"taillemax" : 9,
+					"type" : "nom",
+					"not null" : true
+				}
+			},
+
+			{
+				"name" : "NiveauDifficulte",
+				"type" : "string",
+				"options" :
+				{
+					"taillemin" : 4,
+					"taillemax" : 9,
+					"choix" :["Facile","Moyen","Difficile","Complexe"],
+					"not null" : true
+				}
+			},
+			{
+				"name" : "Theme",
+				"type" : "string",
+				"options" :
+				{
+					"taillemin" : 4,
+					"taillemax" : 9,
+					"type" : "nom",
+					"not null" : true
+				}
+			}
+		]
+	},
+	{
+		"NomRelation" : "Serie",
+		"Attributs" : 
+		[
+			{
+				"name" : "SerieID",
+				"type" : "int",
+				"options" :
+				{
+						"taillemin" : 1,
+						"taillemax" : 71,
+						"type" : "identifiant",
+						"not null" : false,
+						"serial" : true
+				}
+			},
+			{
+				"name" : "CdRomIDs",
+				"type" : "int",
+				"options" :
+				{
+					"taillemin" : 1,
+					"taillemax" : 4,
+					"not null" : true
+				},
+				"link" :
+				{
+					"NomRelation" : "CDROM",
+					"name" : "CdRomID"
+				}
+			 }
+		]
+	},
+	{
+		"NomRelation" : "ContenuSerie",
+		"Attributs" : 
+		[
+			{
+				"name" : "id",
+				"type" : "int",
+				"options" :
+				{
+						"taillemin" : 1,
+						"taillemax" : 57,
+						"type" : "identifiant",
+						"not null" : false,
+						"serial" : true
+				}
+			},
+			{
+				"name" : "SerieIDs",
+				"type" : "int",
+				"options" :
+				{
+					"taillemin" : 1,
+					"taillemax" : 4,
+					"type" : "int",
+					"not null" : true
+				},
+				"link" :
+				{
+					"NomRelation" : "Serie",
+					"name" : "SerieID"
+				}
+			},
+			{
+				"name" : "QuestionIDs",
+				"type" : "int",
+				"options" :
+				{
+					"taillemin" : 1,
+					"taillemax" : 4,
+					"not null" : true
+				},
+				"link" :
+				{
+					"NomRelation" : "Question",
+					"name" : "QuestionID"
+				}
+			},
+			{
+				"name" : "Numero",
+				"type" : "int",
+				"options" :
+				{
+						"taillemin" : 1,
+						"taillemax" : 45,
+						"not null" : true,
+						"serial" : false
+				}
+			}
+		]
+	},
+	{
+		"NomRelation" : "Participation",
+		"Attributs" : 
+		[
+			{
+				"name" : "ClientIDss",
+				"type" : "int",
+				"options" :
+				{
+						"taillemin" : 1,
+						"taillemax" : 4,
+						"not null" : true
+				},
+				"link" :
+				{
+					"NomRelation" : "Client",
+					"name" : "ClientID"
+				}
+			},
+			{
+				"name" : "SeanceIDs",
+				"type" : "int",
+				"options" :
+				{
+					"taillemin" : 1,
+					"taillemax" : 4,
+					"not null" : true
+				},
+				"link" :
+				{
+					"NomRelation" : "SeanceCode",
+					"name" : "SeanceID"
+				}
+			},
+			{
+				"name" : "NombreFautes",
+				"type" : "int",
+				"options" :
+				{
+					"taillemin" : 1,
+					"taillemax" : 4,
+					"type" : "int",
+					"not null" : true
+				}
+			}
+		]
+	},
+	{
+		"NomRelation" : "SeanceCode",
+		"Attributs" : 
+		[
+			{
+				"name" : "SeanceID",
+				"type" : "int",
+				"options" :
+				{
+						"taillemin" : 1,
+						"taillemax" : 52,
+						"type" : "identifiant",
+						"not null" : true,
+						"serial": true
+				}
+			},
+			{
+				"name" : "Date",
+				"type" : "string",
+				"options" :
+				{
+					"taillemin" : 1,
+					"taillemax" : 4,
+					"type" : "date",
+					"not null" : true
+				}
+			},
+			{
+				"name" : "SerieIDss",
+				"type" : "int",
+				"options" :
+				{
+					"taillemin" : 1,
+					"taillemax" : 4,
+					"type" : "int",
+					"not null" : true
+				},
+				"link" :
+				{
+					"NomRelation" : "Serie",
+					"name" : "SerieID"
+				}
+			}
+		]
+	},
+	{
+		"NomRelation" : "Client",
+		"Attributs" : 
+		[
+			{
+				"name" : "ClientID",
+				"type" : "int",
+				"options" :
+				{
+					"taillemin" : 1,
+					"taillemax" : 80,
+					"not null" : true,
+					"serial" : true
+				}
+			},
+			{
+				"name" : "nom",
+				"type" : "string",
+				"options" :
+			
+					{
+						"taillemin" : 5,
+						"taillemax" : 10,
+						"type" : "nom",
+						"not null" : true
+					
+					}
+			},
+			{
+				"name" : "prenom",
+				"type" : "string",
+				"options" :
+				{
+					"taillemin" : 4,
+					"taillemax" : 10,
+					"type" : "nom",
+					"not null" : false,
+					"unique" : false
+				}
+			},
+			{
+				"name" : "sexe",
+				"type" : "string",
+				"options" :
+				{
+					"taillemin" : 10,
+					"taillemax" : 15,
+					"type" : "sexe",
+					"not null" : true,
+					"unique" : false
+				}
+			},
+			{
+				"name" : "adresse",
+				"type" : "string",
+				"options" :
+				{
+					"taillemin" : 12,
+					"taillemax" : 20,
+					"type" : "email",
+					"not null" : true,
+					"unique" : false
+				}
+			},
+			{
+				"name" : "dateNaissance",
+				"type" : "string",
+				"options" :
+				{
+					"taillemin" : 12,
+					"taillemax" : 20,
+					"type" : "date",
+					"not null" : false,
+					"unique" : false
+				}
+			}
+		]
+	},
+	{
+		"NomRelation" : "ExamenCode",
+		"Attributs" : 
+		[
+			{
+				"name" : "PassageCodeID",
+				"type" : "int",
+				"options" :
+				{
+						"taillemin" : 1,
+						"taillemax" : 35,
+						"not null" : true,
+						"serial" : true
+				}
+			},
+			{
+				"name" : "Date",
+				"type" : "string",
+				"options" :
+				{
+					"taillemin" : 1,
+					"taillemax" : 4,
+					"type" : "date",
+					"not null" : true
+				}
+			},
+			
+			{
+				"name" : "LieuExamen",
+				"type" : "string",
+				"options" :
+				{
+					"taillemin" : 4,
+					"taillemax" : 10,
+					"choix" : ["Auditorium","Salle1", "salle2","Labo","Resto"],
+					"not null" : true
+				}
+			 }
+		]
+	},
+	{
+		"NomRelation" : "CDROM",
+		"Attributs" : 
+		[
+			{
+				"name" : "CdRomID",
+				"type" : "int",
+				"options" :
+				{
+						"taillemin" : 4,
+						"taillemax" : 41,
+						"type" : "identifiant",
+						"not null" : true,
+						"serial" : true
+				}
+			},
+			{
+				"name" : "Editeur",
+				"type" : "string",
+				"options" :
+				{
+					"taillemin" : 4,
+					"taillemax" : 9,
+					"type" : "nom",	
+					"not null" : true
+				}
+			}
+		]
+	}
+]
